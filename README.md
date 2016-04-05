@@ -22,4 +22,4 @@ We create an adjacency list to store the edges built by each tweet - hashtag gra
 1. is the code being run in under a minute per minute of sequence?
 2. write out an error log?  (try except)
 
-## there is a separate readme for the get-tweets.py
+#### there is a separate readme for the get-tweets.py
