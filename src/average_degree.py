@@ -31,17 +31,16 @@ def process_tweets(f):
                 df_all = df_all.append(df)
 
                 # Select all tweets within 60 seconds of max_time
-                rolling60 = df_all[(max_date - df_all.date) < datetime.timedelta(minutes=1)]
+                df_all = df_all[(max_date - df_all.date) < datetime.timedelta(minutes=1)]
 
-                # take into account duplicates where pair1 = pair2 in another one (switched)
                 # take into account duplicate pairs at different times
-                rolling60 = hf.check_duplicates(rolling60)
+                df_all = df_all.groupby(by=["tag1","tag2"], as_index=False).last()
 
                 # Calculate # unique tags
-                unique_tags = len(set(list(rolling60.tag1)+list(rolling60.tag2)))
+                unique_tags = len(set(list(df_all.tag1)+list(df_all.tag2)))
 
                 # Calculate the connectivity value: (total edges * 2) / (unique tags)
-                val = rolling60.shape[0]*2 / float(unique_tags)
+                val = df_all.shape[0]*2 / float(unique_tags)
 
                 # write the value to file
                 x = '{0:.2f}'.format(val)
@@ -51,14 +50,13 @@ def process_tweets(f):
                 # even if there is zero or no hashtag in this tweet,
                 # we still want to record the running total,
                 # which is just the same as the previous one
+
                 if dataFrameBuilt == False:
                     val = 0
-                    x = '{0:.2f}'.format(val)
-                    output.write(x+'\n')
                 else:
-                    val = rolling60.shape[0]*2 / float(unique_tags)
-                    x = '{0:.2f}'.format(val)
-                    output.write(x+'\n')
+                    val = df_all.shape[0]*2 / float(unique_tags)
+                x = '{0:.2f}'.format(val)
+                output.write(x+'\n')
 
 if __name__ == '__main__':
 
