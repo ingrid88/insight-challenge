@@ -2,10 +2,10 @@ Insight Data Engineering - Coding Challenge
 ===========================================================
 
 ## requirements for average_degree.py
-import json
-import pandas as pd
-import datetime
-import helper_function as hf
+- import json
+- import pandas as pd
+- import datetime
+- import helper_function as hf
 
 ## Implementation / design
 We create an adjacency list to store the edges built by each tweet - hashtag graph
