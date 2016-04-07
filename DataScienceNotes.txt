@@ -1,0 +1,27 @@
+efficiency , personalization, community, adaptability, accountability
+Zoning codes to protect people from one another??!
+Sidewalk labs, LinkNYC
+
+
+Julia Herschberg
+Prosodic? Prosody
+confidence vs uncertainty
+how does voice change when a person gets angry etc
+Easier to recognize acting than natural voice
+context,
+ABI.NYC - Women Entrepreneurship & Innovation Summit
+
+
+Kathleen McKeown: Tracking events through time: objective and personal views
+How do you predict salience ?!?  recover more of the information that we should be conveying
+cluster examples: 5-gram Kneser-Ney model: generic news corpus (10 years ap and ny times articles
+reditdata: askreddit: if they want stories from people - personal naratives (they manually label a small porition)
+They use the comments as huristics to figure out what the even twas: change in affect? measure the emotional impact of words that are used over the course of the story.
+they hypothesize that the recordee vent comes at a max or min of these activeness and pleasantness measurements.
+
+measure salience,... high - dis, medium, - peaple stremaed out of hopmes low - digg, del.icio.us)
+
+
+mapping subpopulations within big networks
+It turns out that a persons first name tells us a lot mroe about the persons age etc and who else they know in their own network.
+a survey can help capture understanding of social networks and the connectivity between people with similar demographics etc.

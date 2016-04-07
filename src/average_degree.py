@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import datetime
 import helper_function as hf
+import pickle
 
 
 def process_tweets(f):
@@ -35,6 +36,10 @@ def process_tweets(f):
 
                 # take into account duplicate pairs at different times
                 df_all = df_all.groupby(by=["tag1","tag2"], as_index=False).last()
+
+                # Record these tables and we want to weight the edges ? (aka counting)
+                pickle('60_second_interval_'+str(i),df_all)
+                # use in a graph of some sort of way in a flask app.
 
                 # Calculate # unique tags
                 unique_tags = len(set(list(df_all.tag1)+list(df_all.tag2)))
