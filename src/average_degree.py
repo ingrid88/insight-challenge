@@ -38,7 +38,7 @@ def process_tweets(f):
                 df_all = df_all.groupby(by=["tag1","tag2"], as_index=False).last()
 
                 # Record these tables and we want to weight the edges ? (aka counting)
-                pickle('60_second_interval_'+str(i),df_all)
+                pickle.dump('60_second_interval_'+str(i),df_all)
                 # use in a graph of some sort of way in a flask app.
 
                 # Calculate # unique tags
